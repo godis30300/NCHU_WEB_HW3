@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>4103029042</title>
+<script type="Text/JavaScript" src="jquery-3.2.0.js"></script>
+<script type="text/javascript" src="123.js"></script>
+
+
+<style type="text/css">
+#container {
+  margin: 0 auto;
+  width: 80%;
+}
+</style>
+
+</head>
+<body><div id="container">
+	<form id="form0" name="form0" method="post" action="">
+		姓名：<input type="text" size="20" name="username"><br>
+		生日：<input type="text" size="20" name="birth"><br>
+		性別 :<input type="radio" name="sex" value="male" checked="">男
+			   <input type="radio" name="sex" value="female">女<br>
+		興趣 :<input type="checkbox" name="hobby" value="music">聽音樂
+			 <input type="checkbox" name="hobby" value="read">看書
+			 <input type="checkbox" name="hobby" value="run">跑步<br>
+	  自傳:<br>
+		<textarea name="note" cols="50" rows="10"></textarea>
+	</form>
+	<input type="button" value="製作表格" onclick="createTable()">
+	<input type="button" value="刪除表格" onclick="deleteDivs()">
+		<div id="text_field">
+</div></body>
+
+</html>
