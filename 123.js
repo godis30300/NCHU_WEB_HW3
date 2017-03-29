@@ -11,14 +11,30 @@ function createTable() {
     var obj = document.getElementById('text_field');
     //div
     var divs = document.createElement('div');
+        divs.setAttribute = ("align", "center");
     //table 製作
     var tbl = document.createElement('table');
         tbl.style.border = "medium inset #00FF00";
         tbl.rules = "all";
-    //botton1
+    //SELECT
+    var se = document.createElement("SELECT");
+    se.setAttribute("id", "mySelect");
+    var op = new Option("red","red",true,false);
+    se.appendChild(op);
+    op = new Option("green","green",false,false);
+    se.appendChild(op);
+    op = new Option("yellow","yellow",false,false);
+    se.appendChild(op);
+    op = new Option("blue","blue",false,false);
+    se.appendChild(op);
+    op = new Option("black","black",false,false);
+    se.appendChild(op);
+    //botton
     var btn1 = document.createElement("BUTTON");
     btn1.appendChild(document.createTextNode("改變顏色"));
-    btn1.addEventListener("click",function(){setColor(document.getElementsByTagName("table").length)});
+    btn1.id = document.getElementsByTagName("table").length;
+    //btn1.setAttribute("onclick","setColor("+document.getElementsByTagName("table").length+");");
+    btn1.addEventListener("click",function(){setColor(this.id);});
     //name
     var tr = document.createElement('tr');
     tr.appendChild( document.createElement('td') );
@@ -56,19 +72,21 @@ function createTable() {
     tbl.appendChild(tr4);
 
     divs.appendChild(tbl);
+    divs.appendChild(se);
     divs.appendChild(btn1);
     obj.appendChild(divs);
 }
+
 function deleteDivs(){
     var f = document.getElementById("text_field");
     var childs = f.childNodes;
     for(var i = childs.length - 1; i >= 0; i--) {
     f.removeChild(childs[i]);
+  }
 }
 
-
-}
 function setColor(n1) {
     var i = document.getElementsByTagName("table")[n1];
-    i.style.border  = "medium inset red";
+    var s = document.getElementsByTagName("table")[n1].nextSibling;
+    i.style.border  = "medium inset "+s.options[s.selectedIndex].value;
  }
