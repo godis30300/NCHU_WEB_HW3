@@ -18,7 +18,7 @@ function createTable() {
     //botton1
     var btn1 = document.createElement("BUTTON");
     btn1.appendChild(document.createTextNode("改變顏色"));
-    btn1.addEventListener("click",setBlue());
+    btn1.addEventListener("click",function(){setColor(document.getElementsByTagName("table").length)});
     //name
     var tr = document.createElement('tr');
     tr.appendChild( document.createElement('td') );
@@ -68,6 +68,7 @@ function deleteDivs(){
 
 
 }
-function setBlue() {
-    /*document.getElementsByTagName("td")[1].setAttribute("style", "background-color: red;");*/
+function setColor(n1) {
+    var i = document.getElementsByTagName("table")[n1];
+    i.style.border  = "medium inset red";
  }
